@@ -42,12 +42,6 @@ int main(){
     for(int i = 0; i < strsSize; i++) scanf("%[^\n]%*c", words[i]);
     for(int i = 0; i < strsSize; i++) strs[i] = words[i];
 
-    
     printf("%s\n", longestCommonPrefix(strs, strsSize));
-
-
-    // for(int i = 0; i < strsSize; i++) printf(":%s\n", strs[i]);
-
-
     return 0;
 }
