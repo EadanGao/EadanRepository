@@ -17,7 +17,18 @@ struct TreeNode * creatNode(int val){
     return node;
 }
 
+bool symmetricCheck(struct TreeNode* left, struct TreeNode* right){
+    if(left == NULL && right == NULL) return true;
+    if(left == NULL || right == NULL) return false;
+    if(left -> val != right -> val) return false;
+    return symmetricCheck(left -> left, right -> right) && symmetricCheck(left -> right, right -> left);
+}
 
+bool isSymmetric(struct TreeNode* root){
+    if(root == NULL) return NULL;
+
+    return symmetricCheck(root -> left, root -> right);
+}
 
 int main(){
     struct TreeNode * bTree = creatNode(1);
